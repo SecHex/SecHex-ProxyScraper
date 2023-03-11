@@ -118,7 +118,7 @@ def main():
     print("--~~Rapunzel's Proxy-Tool~~ ->	https://github.com/Rapunzel-ware")
 
 
-
+    print('                  ')  
     print('Select Proxy Type:')
     print('1. Socks4 Proxies')
     print('2. HTTP Proxies')
