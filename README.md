@@ -1,5 +1,9 @@
 # proxy-finder
 Rapunzel's Proxy Finder
+Socks4 Proxies
+HTTP Proxies
+SSL Proxies
+US Proxies
 
 
 # Installation 
