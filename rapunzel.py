@@ -1,83 +1,167 @@
 import requests
 from bs4 import BeautifulSoup
+from termcolor import colored
+import json
+
 
 
 def get_socks4_proxies():
-    url = 'https://www.socks-proxy.net/'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    table = soup.find('table')
-
-    rows = table.find_all('tr')
-
+    urls = [
+        'https://www.socks-proxy.net/',
+    ]
     proxies = []
-    for row in rows[1:]:
-        cols = row.find_all('td')
-        if len(cols) > 0:
-            ip = cols[0].text.strip()
-            port = cols[1].text.strip()
-            proxy = f'{ip}:{port}'
-            proxies.append(proxy)
+    for url in urls:
+        try:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, 'html.parser')
 
+            if url == 'https://www.socks-proxy.net/':
+                table = soup.find('table')
+                rows = table.find_all('tr')
+                for row in rows[1:]:
+                    cols = row.find_all('td')
+                    if len(cols) > 0:
+                        ip = cols[0].text.strip()
+                        port = cols[1].text.strip()
+                        country = cols[2].text.strip()
+                        uptime = cols[6].text.strip()
+
+                        # Extract location from country column
+                        location = ''
+                        if country:
+                            location = country.split(',')[0]
+
+                        proxy = {
+                            'ip': ip,
+                            'port': port,
+                            'uptime': uptime,
+                            'location': location
+                        }
+                        proxies.append(proxy)
+
+        except:
+            print(f"Error scraping {url}")
     return proxies
+
+
+
 
 
 def get_http_proxies():
-    url = 'https://www.sslproxies.org/'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    table = soup.find('table')
-
-    rows = table.find_all('tr')
-
+    urls = [
+        'https://www.sslproxies.org/',
+    ]
     proxies = []
-    for row in rows[1:]:
-        cols = row.find_all('td')
-        if len(cols) > 0:
-            ip = cols[0].text.strip()
-            port = cols[1].text.strip()
-            proxy = f'{ip}:{port}'
-            proxies.append(proxy)
+    for url in urls:
+        try:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, 'html.parser')
 
+            if url == 'https://www.sslproxies.org/':
+                table = soup.find('table')
+                rows = table.find_all('tr')
+                for row in rows[1:]:
+                    cols = row.find_all('td')
+                    if len(cols) > 0:
+                        ip = cols[0].text.strip()
+                        port = cols[1].text.strip()
+                        country = cols[2].text.strip()
+                        uptime = cols[6].text.strip()
+
+                        # Extract location from country column
+                        location = ''
+                        if country:
+                            location = country.split(',')[0]
+
+                        proxy = {
+                            'ip': ip,
+                            'port': port,
+                            'uptime': uptime,
+                            'location': location
+                        }
+                        proxies.append(proxy)
+
+        except:
+            print(f"Error scraping {url}")
     return proxies
+
+
 
 
 def get_ssl_proxies():
-    url = 'https://sslproxies.org/'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    table = soup.find('table')
-
-    rows = table.find_all('tr')
-
+    urls = [
+        'https://sslproxies.org/',
+    ]
     proxies = []
-    for row in rows[1:]:
-        cols = row.find_all('td')
-        if len(cols) > 0:
-            ip = cols[0].text.strip()
-            port = cols[1].text.strip()
-            proxy = f'{ip}:{port}'
-            proxies.append(proxy)
+    for url in urls:
+        try:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, 'html.parser')
 
+            if url == 'https://sslproxies.org/':
+                table = soup.find('table')
+                rows = table.find_all('tr')
+                for row in rows[1:]:
+                    cols = row.find_all('td')
+                    if len(cols) > 0:
+                        ip = cols[0].text.strip()
+                        port = cols[1].text.strip()
+                        country = cols[2].text.strip()
+                        uptime = cols[6].text.strip()
+
+                        # Extract location from country column
+                        location = ''
+                        if country:
+                            location = country.split(',')[0]
+
+                        proxy = {
+                            'ip': ip,
+                            'port': port,
+                            'uptime': uptime,
+                            'location': location
+                        }
+                        proxies.append(proxy)
+
+        except:
+            print(f"Error scraping {url}")
     return proxies
 
 def get_us_proxies():
-    url = 'https://www.us-proxy.org/'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    table = soup.find('table')
-
-    rows = table.find_all('tr')
-
+    urls = [
+        'https://www.us-proxy.org/',
+    ]
     proxies = []
-    for row in rows[1:]:
-        cols = row.find_all('td')
-        if len(cols) > 0:
-            ip = cols[0].text.strip()
-            port = cols[1].text.strip()
-            proxy = f'{ip}:{port}'
-            proxies.append(proxy)
+    for url in urls:
+        try:
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, 'html.parser')
 
+            if url == 'https://sslproxies.org/':
+                table = soup.find('table')
+                rows = table.find_all('tr')
+                for row in rows[1:]:
+                    cols = row.find_all('td')
+                    if len(cols) > 0:
+                        ip = cols[0].text.strip()
+                        port = cols[1].text.strip()
+                        country = cols[2].text.strip()
+                        uptime = cols[6].text.strip()
+
+                        # Extract location from country column
+                        location = ''
+                        if country:
+                            location = country.split(',')[0]
+
+                        proxy = {
+                            'ip': ip,
+                            'port': port,
+                            'uptime': uptime,
+                            'location': location
+                        }
+                        proxies.append(proxy)
+
+        except:
+            print(f"Error scraping {url}")
     return proxies
 
 
@@ -94,6 +178,13 @@ def get_all_proxies():
 
     return all_proxies
 
+def save_to_file(proxies):
+    filename = input('Enter filename to save to: ')
+    if not filename.endswith('.txt'):
+        filename += '.txt'
+    with open(filename, 'w') as f:
+        f.write('\n'.join(proxies))
+    print(f'Successfully saved {len(proxies)} proxies to {filename}')
 
 def main():
     print("                      :::!~!!!!!:.")
@@ -118,7 +209,7 @@ def main():
     print("--~~Rapunzel's Proxy-Tool~~ ->	https://github.com/Rapunzel-ware")
 
 
-    print('                  ')  
+
     print('Select Proxy Type:')
     print('1. Socks4 Proxies')
     print('2. HTTP Proxies')
@@ -130,21 +221,29 @@ def main():
 
     if option == 1:
         proxies = get_socks4_proxies()
+        proxy_type = 'SOCKS4'
     elif option == 2:
         proxies = get_http_proxies()
+        proxy_type = 'HTTP'
     elif option == 3:
         proxies = get_ssl_proxies()
+        proxy_type = 'SSL'
     elif option == 4:
         proxies = get_us_proxies()
+        proxy_type = 'US'
     elif option == 5:
         proxies = get_all_proxies()
+        proxy_type = 'ALL'
     else:
         print('Invalid option')
         return
 
-    print(f'Found {len(proxies)} proxies:')
+    print(f'Found {len(proxies)} {proxy_type} proxies:')
     for proxy in proxies:
-        print(proxy)
+        print(colored(f'{proxy_type}: ', 'red') + json.dumps(proxy))
+
+
+
 
 
 if __name__ == '__main__':
