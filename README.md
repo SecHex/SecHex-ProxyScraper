@@ -14,4 +14,5 @@ $ cd proxy-finder
 $ python3 rapunzel.py                      
 
 
-![cascasas](https://user-images.githubusercontent.com/96635023/224543074-cc01a155-c034-4d2c-a42f-d8c0c369d04b.JPG)
+
+![cascasc](https://user-images.githubusercontent.com/96635023/224544895-073f148d-4167-438a-ab94-fb11e6cc625d.JPG)
