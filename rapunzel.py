@@ -1,7 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
 from termcolor import colored
-import json
+from colorama import init, Fore, Style
+
+# Initialize colorama
+init()
+
+# Define color codes
+GREEN = Fore.GREEN
+BLUE = Fore.BLUE
+RED = Fore.RED
+RESET = Style.RESET_ALL
 
 
 
@@ -206,7 +215,7 @@ def main():
     print("Wi.~!X$?!-~    : ?$$$B$Wu(!**$RM!")
     print("$R@i.~~ !     :   ~$$$$$B$$en:``")
     print("?MXT@Wx.~    :     ~!##*$$$$M~")
-    print("--~~Rapunzel's Proxy-Tool~~ ->	https://github.com/Rapunzel-ware")
+    print(f"{RED}--~~Rapunzel's Proxy-Tool~~ ->	https://github.com/Rapunzel-ware{RESET}")
 
 
 
@@ -240,15 +249,14 @@ def main():
         print(colored('Invalid option selected', 'red'))
         return
 
-        # Print proxies
+
     print(f'{"IP":20}{"PORT":8}{"LOCATION":15}{"UPTIME":10}')
     for proxy in proxies:
         ip = proxy['ip']
         port = proxy['port']
         location = proxy['location']
         uptime = proxy['uptime']
-        print(f'{ip:20}{port:8}{location:15}{uptime:10}')
-
+        print(f'{GREEN}{ip:20}{RESET}{port:8}{BLUE}{location:15}{RESET}{uptime:10}')
 
 
 
