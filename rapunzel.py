@@ -217,6 +217,8 @@ def main():
     print('4. US Proxies')
     print('5. All Proxies')
 
+
+
     option = int(input())
 
     if option == 1:
@@ -235,12 +237,17 @@ def main():
         proxies = get_all_proxies()
         proxy_type = 'ALL'
     else:
-        print('Invalid option')
+        print(colored('Invalid option selected', 'red'))
         return
 
-    print(f'Found {len(proxies)} {proxy_type} proxies:')
+        # Print proxies
+    print(f'{"IP":20}{"PORT":8}{"LOCATION":15}{"UPTIME":10}')
     for proxy in proxies:
-        print(colored(f'{proxy_type}: ', 'red') + json.dumps(proxy))
+        ip = proxy['ip']
+        port = proxy['port']
+        location = proxy['location']
+        uptime = proxy['uptime']
+        print(f'{ip:20}{port:8}{location:15}{uptime:10}')
 
 
 
