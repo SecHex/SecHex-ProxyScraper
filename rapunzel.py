@@ -34,8 +34,6 @@ def get_socks4_proxies():
                         port = cols[1].text.strip()
                         country = cols[2].text.strip()
                         uptime = cols[6].text.strip()
-
-                        # Extract location from country column
                         location = ''
                         if country:
                             location = country.split(',')[0]
@@ -155,8 +153,6 @@ def get_us_proxies():
                         port = cols[1].text.strip()
                         country = cols[2].text.strip()
                         uptime = cols[6].text.strip()
-
-                        # Extract location from country column
                         location = ''
                         if country:
                             location = country.split(',')[0]
