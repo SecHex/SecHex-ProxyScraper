@@ -3,10 +3,8 @@ from bs4 import BeautifulSoup
 from termcolor import colored
 from colorama import init, Fore, Style
 
-# Initialize colorama
-init()
 
-# Define color codes
+init()
 GREEN = Fore.GREEN
 BLUE = Fore.BLUE
 RED = Fore.RED
@@ -73,9 +71,7 @@ def get_http_proxies():
                         ip = cols[0].text.strip()
                         port = cols[1].text.strip()
                         country = cols[2].text.strip()
-                        uptime = cols[6].text.strip()
-
-                        # Extract location from country column
+                        uptime = cols[6].text.strip()                        
                         location = ''
                         if country:
                             location = country.split(',')[0]
@@ -115,8 +111,6 @@ def get_ssl_proxies():
                         port = cols[1].text.strip()
                         country = cols[2].text.strip()
                         uptime = cols[6].text.strip()
-
-                        # Extract location from country column
                         location = ''
                         if country:
                             location = country.split(',')[0]
