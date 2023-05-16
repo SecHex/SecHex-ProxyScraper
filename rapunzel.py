@@ -205,7 +205,7 @@ def main():
     print("Wi.~!X$?!-~    : ?$$$B$Wu(!**$RM!")
     print("$R@i.~~ !     :   ~$$$$$B$$en:``")
     print("?MXT@Wx.~    :     ~!##*$$$$M~")
-    print(f"{RED}--~~Rapunzel's Proxy-Tool~~ ->	https://github.com/Rapunzel-ware{RESET}")
+    print(f"{RED}--~~SecHex's Proxy-Tool~~ ->	https://github.com/SecHex{RESET}")
 
 
 
