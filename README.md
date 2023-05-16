@@ -9,7 +9,7 @@ US Proxies
 # Installation 
 $ apt update && apt upgrade                                             
 $ pip install requests                       
-$ git clone https://github.com/Rapunzel-ware/proxy-finder.git                      
+$ git clone https://github.com/SecHex/proxy-finder.git                      
 $ cd proxy-finder                      
 $ python3 rapunzel.py                      
 
