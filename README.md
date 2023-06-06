@@ -1,5 +1,5 @@
 # proxy-finder
-Rapunzel's Proxy Finder                         
+SecHex's                   
 Socks4 Proxies                         
 HTTP Proxies                         
 SSL Proxies                         
